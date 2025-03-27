@@ -36,7 +36,7 @@ body {
 }
 
 
-.salami-board h3{
+.salami-board h3 {
     color: #053706;
 }
 
@@ -154,7 +154,8 @@ button:hover {
 
 .popup-content {
     background: #fff3cd;
-    padding: 30px;
+    padding: 20px;
+    margin-top: 300px;
     border-radius: 10px;
     text-align: center;
     color: black;
@@ -185,33 +186,102 @@ button:hover {
     color: black;
 }
 
+.payment {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.payment .method {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment .pic {
+    flex: 0 0 30%;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.payment .pic img {
+    width: 60%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.payment .num {
+    flex: 1;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .payment .method {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .payment .pic {
+        margin-right: 0;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .payment .num {
+        text-align: center;
+    }
+}
+
+/* Initial hidden state and animation for alert box */
 .alert-box {
-    display: none;
+    display: none; /* Start hidden */
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    background: #ffcc00;
-    color: black;
+    transform: translate(-50%, -50%) scale(0); /* Center and scale down initially */
+    background: #ffcc00; /* Yellow background */
+    color: black; /* Text color */
     padding: 20px 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
     font-size: 18px;
-    z-index: 9999;
+    z-index: 9999; /* Ensure it's on top of other content */
     text-align: center;
-    animation: popIn 0.3s ease-out forwards;
+    animation: popIn 0.3s ease-out forwards; /* Apply pop-in animation */
 }
 
-@keyframes fadeIn {
+/* Pop-in animation */
+@keyframes popIn {
     0% {
         opacity: 0;
-        transform: scale(0.9);
+        transform: translate(-50%, -50%) scale(0.9); /* Initially scaled down */
     }
+
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: translate(-50%, -50%) scale(1); /* Final scaled size */
     }
 }
+
+/* Animation for fade-out effect (when alert is removed) */
+.hide-alert {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9); /* Scale it down and fade */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Smooth transition */
+}
+
 
 .footer a {
     text-decoration: none;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eid Salami Generator</title>
-    <link rel="icon" href="salami.jpg" type="image/icon type">
+    <link rel="icon" href="images/salami.jpg" type="image/icon type">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,7 +13,7 @@
     <div class="container">
         <h1>🎉 Eid Salami Generator 🎉</h1>
         <input type="text" id="nameInput" placeholder="Enter your name (বাংলা / English)">
-        <button onclick="generateSalami()">Get Salami</button>
+        <button onclick="generateSalami()">See Magic</button>
         <div id="result" class="hidden">
             <div class="boy-animation">
                 <img src="https://media.giphy.com/media/1ZN5TyLURcjPx0BEwX/giphy.gif?cid=ecf05e479ryytz00golf3ptf4rupyexxbsfj39rs6ykf0nbg&ep=v1_gifs_search&rid=giphy.gif&ct=g"
@@ -28,42 +28,60 @@
 
         <div class="footer">
             <p>Made with 💖 by <a href="https://www.github.com/Ahsanur-42/" target="_blank">Md. Ahsanur Rahaman!</a></p>
-        <div>
-    </div>
+            <div>
+            </div>
 
-    <div id="paymentPopup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePayment()">&times;</span>
-            <h2>Payment Methods</h2>
+            <div id="paymentPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePayment()">&times;</span>
+                    <h2>Payment Methods</h2>
 
-            <div class="bkash">
-                <div class="pic">
-                    <img src="bkash.png" alt="bKash">
-                </div>
-                <div class="num">
-                    <p><strong>bKash:</strong> 01776-890648</p>
+                    <div class="payment">
+                        <!-- Payment Method 1 -->
+                        <div class="method">
+                            <div class="pic">
+                                <img src="images/bkash.jpg" alt="bKash">
+                            </div>
+                            <div class="num">
+                                <p><strong>bKash:</strong> 01776-890648</p>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method 2 -->
+                        <div class="method">
+                            <div class="pic">
+                                <img src="images/nagad.png" alt="Nagad">
+                            </div>
+                            <div class="num">
+                                <p><strong>Nagad:</strong> 01302-480793</p>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method 3 -->
+                        <div class="method">
+                            <div class="pic">
+                                <img src="images/rocket.jpeg" alt="Rocket">
+                            </div>
+                            <div class="num">
+                                <p><strong>Rocket:</strong> 01302-4807937</p>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method 4 -->
+                        <div class="method">
+                            <div class="pic">
+                                <img src="images/upay.png" alt="Upay">
+                            </div>
+                            <div class="num">
+                                <p><strong>Upay:</strong> 01870-438767</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="nagad">
-                <div class="pic">
-                    <img src="nagad.png" alt="Nagad">
-                </div>
-                <div class="num">
-                    <p><strong>Nagad:</strong> 01302-480793</p>
-                </div>
-            </div>
-            <div class="rocket">
-                <div class="pic">
-                    <img src="rocket.jpeg" alt="Rocket">
-                </div>
-                <div class="num">
-                    <p><strong>Rocket:</strong> 01302-4807937</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
+            <script src="script.js"></script>
 </body>
 
 </html>
