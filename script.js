@@ -4,12 +4,35 @@ function generateSalami() {
         showAlert("Please enter your name!");
         return;
     }
+
+    // Generate random salami amount
     const salami = Math.floor(Math.random() * 100) + 1;
+    console.log(salami);  // For debugging
+
+    // Update the salami amount in the UI
     document.getElementById("salamiAmount").innerText = salami;
+
+    // Check if the name contains Bangla characters
     const isBangla = /[ঀ-৿]/.test(name);
-    const greetingText = isBangla ? `হেই, ${name}! আল্লাহ্‌ আপনার সকল দোয়া কবুল করুন এবং আপনাকে অফুরন্ত সুখ দান করুন। ঈদ মোবারক!, ` : `Hey, ${name}! May Allah accept your prayers and bless you with endless happiness this Eid and always. Eid Mubarak!, `;
+    const greetingText = isBangla
+        ? `আসসালামু-আলাইকুম, ${name}! আল্লাহ্‌ আপনার সকল দোয়া কবুল করুন এবং আপনাকে অফুরন্ত সুখ দান করুন। ঈদ মোবারক!`
+        : `Assalamu-alaikum, ${name}! May Allah accept your prayers and bless you with endless happiness this Eid and always. Eid Mubarak!`;
+
     document.getElementById("greeting").innerText = greetingText;
+
+    // Call to update the text based on the language
+    generateAmount(isBangla);
+
+    // Show the result div
     document.getElementById("result").classList.remove("hidden");
+}
+
+function generateAmount(isBangla) {
+    // Set the label text dynamically based on the language
+    const amountText = isBangla ? `🎁 মোট সালামির পরিমাণঃ ` : `🎁 Total amount of Salami: `;
+
+    // Update the label text for the amount
+    document.getElementById("amountText").innerText = amountText;
 }
 
 function showAlert(message) {
@@ -18,22 +41,19 @@ function showAlert(message) {
     alertBox.innerText = message;
     document.body.appendChild(alertBox);
 
-    // Show the alert in the middle
-    alertBox.style.display = "block";
-
     // Automatically remove the alert after 2 seconds with the hide animation
     setTimeout(() => {
-        alertBox.classList.add("hide-alert");  // Add class to trigger popOut animation
-        // Remove alert after the animation duration (2 seconds)
+        alertBox.classList.add("hide-alert");
         setTimeout(() => {
             alertBox.remove();
-        }, 300); // This should match the duration of the hide animation
-    }, 2000); // Alert will disappear after 2 seconds
+        }, 300);  // Match animation duration
+    }, 2000);  // Alert disappears after 2 seconds
 }
 
 function showPayment() {
     document.getElementById("paymentPopup").style.display = "flex";
 }
+
 
 function closePayment() {
     document.getElementById("paymentPopup").style.display = "none";

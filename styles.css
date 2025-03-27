@@ -1,28 +1,94 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    background: linear-gradient(90deg, #ffcc00, #ff6600);
+    background: linear-gradient(120deg, #ffcc00, #ff6600);
     color: white;
     margin: 0;
-    padding: 20px;
-    height: 100vh;
+    padding: 0;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
 .container {
     max-width: 450px;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    width: 90%;
+    background: rgba(255, 255, 255, 0.15);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+.hidden {
+    display: none;
+}
+
+#amount {
+    display: block;
+    font-size: 24px;
+}
+
+
+.salami-board h3{
+    color: #053706;
+}
+
+#amountText {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f6210a;
+}
+
+#salamiAmount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #053706;
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 80%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    input,
+    button {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    input,
+    button {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
 }
 
 input,
 button {
-    padding: 12px 18px;
+    padding: 14px 20px;
     margin: 10px 0;
     border: none;
     border-radius: 8px;
@@ -33,19 +99,23 @@ button {
 }
 
 input {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     color: #333;
+    font-weight: bold;
 }
 
 button {
-    background: #28a745;
+    background: #218838;
     color: white;
     cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background: #218838;
+    background: #1e7e34;
     transform: scale(1.05);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hidden {
@@ -55,6 +125,7 @@ button:hover {
 .boy-animation img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
 }
 
 .salami-board {
@@ -65,18 +136,7 @@ button:hover {
     display: inline-block;
     margin-top: 20px;
     animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .popup {
@@ -103,14 +163,26 @@ button:hover {
     max-width: 400px;
     width: 90%;
     animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .close {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
     cursor: pointer;
+    color: black;
 }
 
 .alert-box {
@@ -130,76 +202,22 @@ button:hover {
     animation: popIn 0.3s ease-out forwards;
 }
 
-@keyframes popIn {
+@keyframes fadeIn {
     0% {
-        transform: translate(-50%, -50%) scale(0);
         opacity: 0;
+        transform: scale(0.9);
     }
-
     100% {
-        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
+        transform: scale(1);
     }
 }
 
-@keyframes popOut {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0;
-    }
+.footer a {
+    text-decoration: none;
+    color: #23834c;
 }
 
-h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #ffcc00;
-}
-
-h2 {
-    font-size: 24px;
-    color: #008000;
-}
-
-h3 {
-    font-size: 20px;
-    color: #ff6600;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-
-    input,
-    button {
-        font-size: 14px;
-    }
-
-    .popup-content {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    input,
-    button {
-        font-size: 12px;
-    }
-
-    .popup-content {
-        padding: 15px;
-    }
+.footer {
+    padding: 10px;
 }
