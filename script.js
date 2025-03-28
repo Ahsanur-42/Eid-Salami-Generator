@@ -6,7 +6,7 @@ function generateSalami() {
     }
 
     // Generate random salami amount
-    const salami = Math.floor(Math.random() * 100) + 1;
+    const salami = Math.floor(Math.random() * 500) + 1;
     console.log(salami);
 
     // Update the salami amount in the UI
